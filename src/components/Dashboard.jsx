@@ -5,7 +5,6 @@ const Dashboard = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Fetch memes from the API and filter for Kenyan-themed memes
     fetch('https://api.imgflip.com/get_memes')
       .then((response) => response.json())
       .then((data) => {
@@ -42,7 +41,6 @@ const Dashboard = () => {
         <img src="/logonew.jpg" alt="Logo" className="logo" />
         <nav className="nav-bar">
           <a href="/">Dashboard</a>
-          <a href="/MemeGenerator">Meme Generator</a>
           <a href="https://wa.me/254768581254">Chat with Us</a>
         </nav>
         <button className="theme-toggle" onClick={toggleDarkMode}>
@@ -90,9 +88,10 @@ const Dashboard = () => {
       <style jsx>{`
         .dashboard {
           font-family: 'Roboto', sans-serif;
+          max-width: 1200px;
+          margin: 0 auto;
           padding: 20px;
           border-radius: 10px;
-          margin: 20px;
           text-align: center;
           transition: background-color 0.3s, color 0.3s;
         }
@@ -113,6 +112,7 @@ const Dashboard = () => {
         }
         .logo {
           width: 100px;
+          height: auto;
         }
         .nav-bar a {
           margin: 0 15px;
@@ -153,16 +153,15 @@ const Dashboard = () => {
           border-radius: 10px;
           padding: 20px;
           transition: background-color 0.3s, color 0.3s;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .light .highlights {
           background-color: #fff;
           color: #333;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .dark .highlights {
           background-color: #444;
           color: #fff;
-          box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
         }
         .meme-image {
           width: 100%;
@@ -196,6 +195,18 @@ const Dashboard = () => {
         .footer {
           margin-top: 30px;
           font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+          .header {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .nav-bar {
+            margin-top: 10px;
+          }
+          .meme-image {
+            max-width: 100%;
+          }
         }
       `}</style>
     </div>
