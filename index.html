@@ -6,291 +6,173 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>MEMES254KE</title>
+    <title>MEMES254KE - Random Memes</title>
 
-    <!-- CSS and FontAwesome -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet" />
 
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #f0f0f0;
             padding-top: 60px;
         }
 
         header {
             background-color: #343a40;
-            padding: 20px 0;
+            padding: 20px;
             color: white;
             text-align: center;
         }
 
-        header .logo {
-            font-size: 24px;
-        }
-
         .meme-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 80%;
+            margin: 30px auto;
+            text-align: center;
         }
 
-        .meme {
-            position: relative;
-            background-color: #fff;
+        .meme-container img {
+            max-width: 100%;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
         }
 
-        .meme img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .meme:hover img {
+        .meme-container img:hover {
             transform: scale(1.05);
         }
 
-        .meme .actions {
-            padding: 15px;
-            background-color: #f1f1f1;
+        .meme-actions {
+            margin-top: 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .meme .actions button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #007bff;
+        .meme-actions button {
+            background-color: #343a40;
             color: white;
+            border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        .meme .actions button:hover {
-            background-color: #0056b3;
+        .meme-actions button:hover {
+            background-color: #007bff;
         }
 
-        .comments {
-            display: none;
-            padding: 20px;
-            background-color: #f1f1f1;
-            border-top: 1px solid #ddd;
+        .comment-section {
+            margin-top: 20px;
+            text-align: center;
         }
 
-        .comments.visible {
-            display: block;
-        }
-
-        .comments textarea {
-            width: 100%;
+        .comment-section input {
+            width: 70%;
             padding: 10px;
-            border-radius: 5px;
             margin-bottom: 10px;
-        }
-
-        .comments button {
-            background-color: #28a745;
-            border: none;
-            padding: 10px 20px;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .comments button:hover {
-            background-color: #218838;
-        }
-
-        .trending-memes {
-            margin-top: 40px;
-        }
-
-        .trending-memes h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .trending-meme {
-            background-color: #fff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        /* Authentication Form */
-        .auth-form {
-            max-width: 400px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .auth-form input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
 
-        .auth-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
+        .comment-section button {
+            background-color: #28a745;
             color: white;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .auth-form button:hover {
-            background-color: #0056b3;
-        }
-
-        .auth-form p {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .auth-form p a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 767px) {
-            header .logo {
-                font-size: 20px;
-            }
-
-            .meme-container {
-                padding: 10px;
-            }
+        .comment-section button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <h1>MEMES254KE</h1>
-        </div>
-    </header>
+<!-- Header -->
+<header>
+    <h1>MEMES254KE</h1>
+    <p>Your favorite place for memes</p>
+</header>
 
-    <!-- Main Content -->
-    <div class="meme-container">
-
-        <!-- Random Meme Section -->
-        <div class="meme">
-            <img id="random-meme" src="" alt="Random Meme">
-            <div class="actions">
-                <button onclick="likeMeme()">Like</button>
-                <button onclick="toggleComments()">Comment</button>
-            </div>
-            <div class="comments">
-                <textarea placeholder="Write a comment..."></textarea>
-                <button onclick="submitComment()">Post Comment</button>
-            </div>
-        </div>
-
-        <!-- Trending Memes Section -->
-        <div class="trending-memes">
-            <h2>Trending Memes</h2>
-            <div class="trending-meme">
-                <strong>Trending Meme 1</strong>
-            </div>
-            <div class="trending-meme">
-                <strong>Trending Meme 2</strong>
-            </div>
-            <div class="trending-meme">
-                <strong>Trending Meme 3</strong>
-            </div>
-        </div>
-
-        <!-- User Authentication Section -->
-        <div class="auth-form" id="auth-form">
-            <h2>Login</h2>
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="loginUser()">Login</button>
-            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
-        </div>
-
+<!-- Meme Display Section -->
+<div class="meme-container">
+    <img id="memeImage" src="" alt="Random Meme" />
+    <div class="meme-actions">
+        <button id="loadMemeBtn">Load Random Meme</button>
+        <button id="likeBtn">👍 Like</button>
+        <button id="commentBtn">💬 Comment</button>
     </div>
+</div>
 
-    <!-- Javascript -->
-    <script>
-        // Simulate Meme Data
-        const memes = [
-            'meme1.jpg', 'meme2.jpg', 'meme3.jpg', 'meme4.jpg'
-        ];
+<!-- Comment Section -->
+<div class="comment-section">
+    <input type="text" id="commentInput" placeholder="Write your comment here..." />
+    <button id="submitCommentBtn">Submit Comment</button>
+    <ul id="commentList"></ul>
+</div>
 
-        // Display Random Meme
-        function displayRandomMeme() {
-            const randomMeme = memes[Math.floor(Math.random() * memes.length)];
-            document.getElementById('random-meme').src = randomMeme;
+<!-- Footer -->
+<footer style="text-align: center; margin-top: 50px; padding: 20px;">
+    <p>Powered by MEMES254KE</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    // Meme API URL (using a random meme generator)
+    const memeAPI = 'https://meme-api.com/gimme';
+
+    let memeLikes = 0;
+    let comments = [];
+
+    // Function to fetch a random meme
+    function loadRandomMeme() {
+        fetch(memeAPI)
+            .then(response => response.json())
+            .then(data => {
+                const memeUrl = data.url;
+                document.getElementById('memeImage').src = memeUrl;
+            })
+            .catch(err => console.error('Error fetching meme:', err));
+    }
+
+    // Load meme when the page loads
+    window.onload = loadRandomMeme;
+
+    // Event Listener for the "Load Random Meme" button
+    document.getElementById('loadMemeBtn').addEventListener('click', loadRandomMeme);
+
+    // Event Listener for the "Like" button
+    document.getElementById('likeBtn').addEventListener('click', function() {
+        memeLikes++;
+        alert('You liked this meme! Total Likes: ' + memeLikes);
+    });
+
+    // Event Listener for the "Comment" button
+    document.getElementById('commentBtn').addEventListener('click', function() {
+        document.getElementById('commentSection').style.display = 'block';
+    });
+
+    // Event Listener for the "Submit Comment" button
+    document.getElementById('submitCommentBtn').addEventListener('click', function() {
+        const commentText = document.getElementById('commentInput').value;
+        if (commentText) {
+            comments.push(commentText);
+            const commentList = document.getElementById('commentList');
+            const newComment = document.createElement('li');
+            newComment.textContent = commentText;
+            commentList.appendChild(newComment);
+            document.getElementById('commentInput').value = ''; // Clear input
         }
+    });
+</script>
 
-        // Like Meme
-        function likeMeme() {
-            alert('You liked this meme!');
-        }
-
-        // Toggle Comments Section
-        function toggleComments() {
-            const comments = document.querySelector('.comments');
-            comments.classList.toggle('visible');
-        }
-
-        // Submit Comment
-        function submitComment() {
-            const comment = document.querySelector('.comments textarea').value;
-            if (comment) {
-                alert('Comment posted: ' + comment);
-                document.querySelector('.comments textarea').value = '';
-            } else {
-                alert('Please write a comment before posting.');
-            }
-        }
-
-        // User Authentication (Placeholder)
-        function loginUser() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            if (username && password) {
-                alert(`Welcome, ${username}!`);
-                document.getElementById('auth-form').style.display = 'none';
-            } else {
-                alert('Please enter valid credentials.');
-            }
-        }
-
-        // Show SignUp Page (Placeholder)
-        function showSignup() {
-            alert('Redirect to Sign Up page!');
-        }
-
-        // Initialize the Random Meme on Page Load
-        window.onload = function () {
-            displayRandomMeme();
-        };
-    </script>
 </body>
-
 </html>
