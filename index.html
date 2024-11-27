@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMES254KE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to MEMES254KE</h1>
+    </header>
+
+    <main>
+        <!-- Random Meme Section -->
+        <section id="random-meme">
+            <h2>Random Meme</h2>
+            <img id="random-meme-img" src="" alt="Random Meme">
+        </section>
+
+        <!-- Meme Upload Section -->
+        <div class="upload-section">
+            <h2>Upload Your Meme</h2>
+            <input type="file" id="meme-upload" accept="image/*">
+            <button onclick="uploadMeme()">Upload Meme</button>
+        </div>
+
+        <!-- Meme Container -->
+        <div class="meme-container">
+            <div class="meme" id="meme-1">
+                <img src="meme1.jpg" alt="Meme 1">
+                <div class="meme-buttons">
+                    <button class="like-btn" onclick="likeMeme('meme-1')">Like</button>
+                    <button class="comment-btn" onclick="toggleComment('meme-1')">Comment</button>
+                </div>
+                <div class="comments" id="comments-meme-1" style="display:none;">
+                    <textarea id="comment-text-meme-1" placeholder="Write a comment..."></textarea>
+                    <button onclick="submitComment('meme-1')">Post Comment</button>
+                    <ul id="comment-list-meme-1"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Memes Section -->
+        <section id="trending-memes">
+            <h2>Trending Memes</h2>
+            <div id="trending-list"></div>
+        </section>
+
+        <!-- Authentication -->
+        <div id="auth-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="loginUser()">Login</button>
+            <p>Don't have an account? <span onclick="showSignup()">Sign Up</span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MEMES254KE. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
