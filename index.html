@@ -12,7 +12,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet" />
-
     <style>
         * {
             margin: 0;
@@ -29,20 +28,25 @@
 
         header {
             background: linear-gradient(135deg, #ff4e50, #ff6a00);
-            padding: 30px;
+            padding: 80px 20px;
             color: white;
             text-align: center;
             border-radius: 10px 10px 0 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         header p {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            font-weight: 300;
         }
 
         .container {
@@ -60,20 +64,21 @@
             background-color: #333;
             padding-top: 20px;
             display: none;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .sidebar a {
             color: white;
-            padding: 12px 20px;
+            padding: 15px 20px;
             text-decoration: none;
             display: block;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .sidebar a:hover {
             background-color: #ff6a00;
+            transform: scale(1.05);
         }
 
         .sidebar .close-btn {
@@ -98,13 +103,15 @@
         }
 
         .section h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #ff6a00;
         }
 
         .section p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #ccc;
             max-width: 800px;
             margin: 0 auto;
@@ -117,7 +124,8 @@
         }
 
         .meme-container img {
-            width: 500px; /* Fixed medium size */
+            width: 80%;
+            max-width: 500px;
             height: auto;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
@@ -125,7 +133,7 @@
         }
 
         .meme-container img:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
         }
 
@@ -152,10 +160,6 @@
             transform: scale(1.1);
         }
 
-        .meme-actions button:active {
-            transform: scale(1);
-        }
-
         .dinosaur-game-container {
             text-align: center;
             margin-top: 50px;
@@ -179,13 +183,14 @@
         }
 
         .social-media a {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #fff;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-media a:hover {
             color: #ff6a00;
+            transform: scale(1.1);
         }
 
         footer {
@@ -210,7 +215,7 @@
             }
 
             .meme-container img {
-                width: 80%;
+                width: 90%;
             }
 
             .meme-actions button {
@@ -226,7 +231,6 @@
             .sidebar {
                 width: 200px;
             }
-
         }
 
     </style>
@@ -253,7 +257,7 @@
     </header>
 
     <!-- Sidebar Toggle Button -->
-    <button style="position: absolute; left: 15px; top: 20px; background-color: #ff4e50; color: white; border: none; padding: 15px; font-size: 1.2rem; border-radius: 50%; cursor: pointer;" onclick="toggleSidebar()">&#9776;</button>
+    <button style="position: absolute; left: 15px; top: 20px; background-color: #ff4e50; color: white; border: none; padding: 15px; font-size: 1.5rem; border-radius: 50%; cursor: pointer;" onclick="toggleSidebar()">&#9776;</button>
 
     <!-- About Section -->
     <div id="aboutSection" class="section">
