@@ -91,47 +91,19 @@
             transform: scale(1);
         }
 
-        .comment-section {
-            margin-top: 30px;
+        /* Dinosaur Game Section */
+        .dinosaur-game-container {
             text-align: center;
+            margin-top: 50px;
+            position: relative;
+            width: 100%;
+            height: 500px;
         }
 
-        .comment-section input {
-            width: 80%;
-            padding: 12px;
-            border-radius: 50px;
-            border: 1px solid #333;
-            background-color: #2c2c2c;
-            color: #fff;
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .comment-section button {
-            background-color: #28a745;
-            color: white;
-            padding: 12px 30px;
+        .dinosaur-game-container iframe {
+            width: 100%;
+            height: 100%;
             border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .comment-section button:hover {
-            background-color: #218838;
-        }
-
-        .comment-section ul {
-            list-style-type: none;
-            margin-top: 20px;
-        }
-
-        .comment-section li {
-            background-color: #333;
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin: 5px 0;
         }
 
         footer {
@@ -158,15 +130,6 @@
                 padding: 12px 25px;
                 font-size: 1rem;
             }
-
-            .comment-section input {
-                width: 70%;
-                font-size: 1rem;
-            }
-
-            .comment-section button {
-                padding: 12px 25px;
-            }
         }
 
     </style>
@@ -185,16 +148,12 @@
     <img id="memeImage" src="" alt="Random Meme" />
     <div class="meme-actions">
         <button id="loadMemeBtn">Load Random Meme</button>
-        <button id="likeBtn">👍 Like</button>
-        <button id="commentBtn">💬 Comment</button>
     </div>
 </div>
 
-<!-- Comment Section -->
-<div class="comment-section">
-    <input type="text" id="commentInput" placeholder="Write your comment here..." />
-    <button id="submitCommentBtn">Submit Comment</button>
-    <ul id="commentList"></ul>
+<!-- Dinosaur Game Section -->
+<div class="dinosaur-game-container">
+    <iframe src="https://chromedino.com/" frameborder="0"></iframe>
 </div>
 
 <!-- Footer -->
@@ -208,9 +167,6 @@
 <script>
     // Meme API URL (using a random meme generator)
     const memeAPI = 'https://meme-api.com/gimme';
-
-    let memeLikes = 0;
-    let comments = [];
 
     // Function to fetch a random meme
     function loadRandomMeme() {
@@ -228,30 +184,6 @@
 
     // Event Listener for the "Load Random Meme" button
     document.getElementById('loadMemeBtn').addEventListener('click', loadRandomMeme);
-
-    // Event Listener for the "Like" button
-    document.getElementById('likeBtn').addEventListener('click', function () {
-        memeLikes++;
-        alert('You liked this meme! Total Likes: ' + memeLikes);
-    });
-
-    // Event Listener for the "Comment" button
-    document.getElementById('commentBtn').addEventListener('click', function () {
-        document.getElementById('commentSection').style.display = 'block';
-    });
-
-    // Event Listener for the "Submit Comment" button
-    document.getElementById('submitCommentBtn').addEventListener('click', function () {
-        const commentText = document.getElementById('commentInput').value;
-        if (commentText) {
-            comments.push(commentText);
-            const commentList = document.getElementById('commentList');
-            const newComment = document.createElement('li');
-            newComment.textContent = commentText;
-            commentList.appendChild(newComment);
-            document.getElementById('commentInput').value = ''; // Clear input
-        }
-    });
 </script>
 
 </body>
