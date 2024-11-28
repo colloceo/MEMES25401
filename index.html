@@ -24,7 +24,6 @@
             font-family: 'Open Sans', sans-serif;
             background-color: #121212;
             color: #fff;
-            padding-top: 50px;
             overflow-x: hidden;
         }
 
@@ -46,9 +45,56 @@
             font-size: 1.25rem;
         }
 
+        .container {
+            display: flex;
+            margin-top: 30px;
+            flex-direction: row;
+        }
+
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #333;
+            padding-top: 20px;
+            display: none;
+            transition: all 0.3s;
+        }
+
+        .sidebar a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #ff6a00;
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .content {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            padding: 40px;
+        }
+
         .section {
             padding: 40px 0;
             text-align: center;
+            margin-top: 20px;
         }
 
         .section h2 {
@@ -65,13 +111,14 @@
         }
 
         .meme-container {
-            max-width: 80%;
+            max-width: 100%;
             margin: 30px auto;
             text-align: center;
         }
 
         .meme-container img {
-            max-width: 100%;
+            width: 500px; /* Fixed medium size */
+            height: auto;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -109,7 +156,6 @@
             transform: scale(1);
         }
 
-        /* Dinosaur Game Section */
         .dinosaur-game-container {
             text-align: center;
             margin-top: 50px;
@@ -125,7 +171,6 @@
             border: none;
         }
 
-        /* Social Media Links */
         .social-media {
             margin-top: 30px;
             display: flex;
@@ -159,8 +204,13 @@
 
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
+            .content {
+                margin-left: 0;
+                width: 100%;
+            }
+
             .meme-container img {
-                max-width: 90%;
+                width: 80%;
             }
 
             .meme-actions button {
@@ -172,6 +222,11 @@
                 width: 100%;
                 height: 250px;
             }
+
+            .sidebar {
+                width: 200px;
+            }
+
         }
 
     </style>
@@ -179,65 +234,81 @@
 
 <body>
 
-<!-- Header -->
-<header>
-    <h1>MEMES254KE</h1>
-    <p>Your ultimate meme destination</p>
-</header>
-
-<!-- About Section -->
-<div class="section">
-    <h2>About Us</h2>
-    <p>Welcome to MEMES254KE! We are a fun and vibrant platform where you can explore, share, and enjoy the funniest memes on the internet. Our goal is to bring joy and laughter to your day with the most random and hilarious memes.</p>
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+    <a href="#aboutSection">About Us</a>
+    <a href="#historySection">History</a>
+    <a href="#portfolioSection">Portfolio</a>
+    <a href="#gallerySection">Gallery</a>
 </div>
 
-<!-- History Section -->
-<div class="section" style="background-color: #1e1e1e;">
-    <h2>Our History</h2>
-    <p>Founded in 2024, MEMES254KE began as a simple idea to make the internet a more entertaining place by sharing memes. Over time, we’ve grown into a community-driven hub for meme lovers from around the world.</p>
-</div>
+<!-- Content Area -->
+<div class="content">
 
-<!-- Portfolio Section -->
-<div class="section">
-    <h2>Our Portfolio</h2>
-    <p>Take a look at some of our featured memes and highlights that showcase our creative and funny side. Our collection is ever-growing with more memes coming daily!</p>
-</div>
+    <!-- Header -->
+    <header>
+        <h1>MEMES254KE</h1>
+        <p>Your ultimate meme destination</p>
+    </header>
 
-<!-- Meme Display Section -->
-<div class="meme-container">
-    <img id="memeImage" src="" alt="Random Meme" />
-    <div class="meme-actions">
-        <button id="loadMemeBtn">Load Random Meme</button>
+    <!-- Sidebar Toggle Button -->
+    <button style="position: absolute; left: 15px; top: 20px; background-color: #ff4e50; color: white; border: none; padding: 15px; font-size: 1.2rem; border-radius: 50%; cursor: pointer;" onclick="toggleSidebar()">&#9776;</button>
+
+    <!-- About Section -->
+    <div id="aboutSection" class="section">
+        <h2>About Us</h2>
+        <p>Welcome to MEMES254KE! We are a fun and vibrant platform where you can explore, share, and enjoy the funniest memes on the internet. Our goal is to bring joy and laughter to your day with the most random and hilarious memes.</p>
     </div>
-</div>
 
-<!-- Dinosaur Game Section -->
-<div class="dinosaur-game-container">
-    <iframe src="https://chromedino.com/" frameborder="0"></iframe>
-</div>
+    <!-- History Section -->
+    <div id="historySection" class="section" style="background-color: #1e1e1e;">
+        <h2>Our History</h2>
+        <p>Founded in 2024, MEMES254KE began as a simple idea to make the internet a more entertaining place by sharing memes. Over time, we’ve grown into a community-driven hub for meme lovers from around the world.</p>
+    </div>
 
-<!-- Gallery Section -->
-<div class="section" style="background-color: #1e1e1e;">
-    <h2>Gallery</h2>
-    <p>Check out our meme gallery. Here, you'll find some of the best memes curated for you!</p>
-</div>
+    <!-- Portfolio Section -->
+    <div id="portfolioSection" class="section">
+        <h2>Our Portfolio</h2>
+        <p>Take a look at some of our featured memes and highlights that showcase our creative and funny side. Our collection is ever-growing with more memes coming daily!</p>
+    </div>
 
-<!-- Social Media Links -->
-<div class="social-media">
-    <a href="https://wa.me/yourphone" target="_blank" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
-    <a href="https://instagram.com/youraccount" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
-    <a href="https://t.me/yourchannel" target="_blank" title="Telegram"><i class="fa fa-telegram"></i></a>
-</div>
+    <!-- Meme Display Section -->
+    <div class="meme-container">
+        <img id="memeImage" src="" alt="Random Meme" />
+        <div class="meme-actions">
+            <button id="loadMemeBtn">Load Random Meme</button>
+        </div>
+    </div>
 
-<!-- Footer -->
-<footer>
-    <p>Powered by MEMES254KE - Stay Epic!</p>
-</footer>
+    <!-- Dinosaur Game Section -->
+    <div class="dinosaur-game-container">
+        <iframe src="https://chromedino.com/" frameborder="0"></iframe>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social-media">
+        <a href="https://wa.me/yourphone" target="_blank"><i class="fa fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/youraccount" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://t.me/yourchannel" target="_blank"><i class="fa fa-telegram"></i></a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Powered by MEMES254KE | All rights reserved.</p>
+    </footer>
+</div>
 
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+    // Function to toggle sidebar visibility
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.style.display = (sidebar.style.display === 'block') ? 'none' : 'block';
+    }
+
     // Meme API URL (using a random meme generator)
     const memeAPI = 'https://meme-api.com/gimme';
 
