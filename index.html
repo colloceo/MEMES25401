@@ -129,32 +129,6 @@
             background-color: #45a049;
         }
 
-        /* Featured Memes Section */
-        .featured-memes {
-            background-color: #f0f0f0;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .featured-memes h3 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .meme-gallery {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .meme-gallery img {
-            max-width: 250px;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
         /* Meme Categories */
         .categories {
             background-color: #fff;
@@ -188,109 +162,141 @@
             background-color: #45a049;
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            background-color: #f9f9f9;
+        /* Trending Memes Section */
+        .trending-memes {
+            background-color: #f0f0f0;
             padding: 40px 0;
             text-align: center;
         }
 
-        .testimonials h3 {
+        .trending-memes h3 {
             font-size: 2rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .testimonial-cards {
+        .trending-gallery {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        .testimonial-card {
-            background-color: #fff;
-            padding: 20px;
+        .trending-gallery img {
+            max-width: 250px;
             border-radius: 10px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            width: 300px;
         }
 
-        .testimonial-card p {
-            font-style: italic;
-        }
-
-        /* Newsletter Signup */
-        .newsletter {
+        /* Meme of the Day */
+        .meme-of-the-day {
             background-color: #4CAF50;
             padding: 40px 0;
             color: white;
             text-align: center;
         }
 
-        .newsletter h3 {
+        .meme-of-the-day h3 {
             font-size: 2rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .newsletter input {
-            padding: 10px;
-            font-size: 1rem;
-            border-radius: 5px;
-            width: 60%;
-            margin-right: 10px;
+        .meme-of-the-day img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .newsletter button {
-            background-color: #fff;
-            color: #4CAF50;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            cursor: pointer;
-        }
-
-        .newsletter button:hover {
-            background-color: #45a049;
-            color: white;
-        }
-
-        /* FAQ Section */
-        .faq {
+        /* Meme Generator Section */
+        .meme-generator {
             background-color: #fff;
             padding: 40px 0;
             text-align: center;
         }
 
-        .faq h3 {
+        .meme-generator h3 {
             font-size: 2rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .faq-list {
-            text-align: left;
-            margin: 0 auto;
-            max-width: 700px;
+        .meme-generator form {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .faq-item {
-            margin-bottom: 15px;
-        }
-
-        .faq-item h5 {
+        .meme-generator input,
+        .meme-generator button {
+            padding: 10px;
             font-size: 1.2rem;
+            border-radius: 5px;
+        }
+
+        .meme-generator button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        /* Social Media Links */
+        .social-media {
+            background-color: #333;
+            padding: 30px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .social-media a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #4CAF50;
+        }
+
+        /* Contact Us Form */
+        .contact-us {
+            background-color: #f9f9f9;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .contact-us h3 {
+            font-size: 2rem;
             font-weight: bold;
+            margin-bottom: 20px;
         }
 
-        .faq-item p {
-            font-size: 1rem;
-            margin-top: 5px;
+        .contact-us form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
-        /* Footer */
+        .contact-us input,
+        .contact-us textarea {
+            width: 60%;
+            padding: 10px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+
+        .contact-us button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -299,9 +305,7 @@
             margin-top: 50px;
             font-size: 0.9rem;
         }
-
     </style>
-    
 </head>
 
 <body>
@@ -315,18 +319,18 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="menu">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#history">History</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#">Home</a>
+            <a href="#">Memes</a>
+            <a href="#">Categories</a>
+            <a href="#">Meme Generator</a>
+            <a href="#">Contact</a>
         </div>
-        <button class="btn btn-outline-primary" onclick="toggleSidebar()">☰</button>
     </nav>
 
-    <!-- Main Content -->
     <div class="container">
+        <!-- Main Content -->
         <div class="main-content">
-            <h2>Explore Our Latest Memes</h2>
+            <h2>Explore the Best Memes</h2>
 
             <!-- Meme Section -->
             <div class="meme-container">
@@ -348,53 +352,48 @@
         </div>
     </div>
 
-    <!-- Featured Memes -->
-    <div class="featured-memes">
-        <h3>Featured Memes</h3>
-        <div class="meme-gallery">
-            <img src="https://i.imgci.com/placeholder.jpg" alt="Featured Meme 1">
-            <img src="https://i.imgci.com/placeholder.jpg" alt="Featured Meme 2">
-            <img src="https://i.imgci.com/placeholder.jpg" alt="Featured Meme 3">
+    <!-- Trending Memes Section -->
+    <div class="trending-memes">
+        <h3>Trending Memes</h3>
+        <div class="trending-gallery">
+            <img src="https://i.imgci.com/placeholder.jpg" alt="Trending Meme 1">
+            <img src="https://i.imgci.com/placeholder.jpg" alt="Trending Meme 2">
+            <img src="https://i.imgci.com/placeholder.jpg" alt="Trending Meme 3">
         </div>
     </div>
 
-    <!-- Testimonials Section -->
-    <div class="testimonials">
-        <h3>What Our Users Say</h3>
-        <div class="testimonial-cards">
-            <div class="testimonial-card">
-                <p>"The funniest memes I have ever seen! I visit this site every day!"</p>
-                <p>- Jane Doe</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"If you love memes, this is the site to be! Hilarious and up-to-date."</p>
-                <p>- John Smith</p>
-            </div>
-        </div>
+    <!-- Meme of the Day -->
+    <div class="meme-of-the-day">
+        <h3>Meme of the Day</h3>
+        <img src="https://i.imgci.com/placeholder.jpg" alt="Meme of the Day">
     </div>
 
-    <!-- Newsletter Signup -->
-    <div class="newsletter">
-        <h3>Subscribe to Our Newsletter</h3>
+    <!-- Meme Generator -->
+    <div class="meme-generator">
+        <h3>Create Your Own Meme</h3>
         <form>
-            <input type="email" placeholder="Enter your email">
-            <button type="submit">Subscribe</button>
+            <input type="text" placeholder="Top text" />
+            <input type="text" placeholder="Bottom text" />
+            <button type="submit">Create Meme</button>
         </form>
     </div>
 
-    <!-- FAQ Section -->
-    <div class="faq">
-        <h3>Frequently Asked Questions</h3>
-        <div class="faq-list">
-            <div class="faq-item">
-                <h5>How do I submit my own memes?</h5>
-                <p>We are working on adding a submission page soon. Stay tuned!</p>
-            </div>
-            <div class="faq-item">
-                <h5>Can I download the memes?</h5>
-                <p>Yes, right-click and save any meme you'd like!</p>
-            </div>
-        </div>
+    <!-- Social Media Links -->
+    <div class="social-media">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="contact-us">
+        <h3>Contact Us</h3>
+        <form>
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Your Email" />
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 
     <!-- Footer -->
@@ -421,7 +420,6 @@
 
         // Load meme on page load
         window.onload = loadRandomMeme;
-
     </script>
 
 </body>
