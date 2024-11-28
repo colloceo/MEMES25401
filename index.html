@@ -2,17 +2,19 @@
 <html lang="en">
 
 <head>
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>MEMES254KE - Epic Memes</title>
-
-    <!-- CSS -->
+    
+    <!-- Link to CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Custom Styles -->
     <style>
+        /* Reset and Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -20,319 +22,248 @@
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #121212;
-            color: #fff;
-            overflow-x: hidden;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
         header {
-            background: linear-gradient(135deg, #ff4e50, #ff6a00);
-            padding: 80px 20px;
+            background-color: #4CAF50;
             color: white;
+            padding: 20px;
             text-align: center;
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-            transition: all 0.3s ease;
+            border-radius: 0 0 10px 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
         }
 
         header h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1.5rem;
-            margin-top: 10px;
-            font-weight: 300;
+            font-size: 2.5rem;
+            margin: 0;
         }
 
         .container {
+            padding-top: 100px; /* To avoid content overlap due to fixed header */
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 60px;
             display: flex;
-            margin-top: 30px;
-            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .sidebar {
-            width: 250px;
-            position: fixed;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            background-color: #333;
-            padding-top: 20px;
-            display: none;
-            transition: all 0.3s ease;
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
         }
 
-        .sidebar a {
-            color: white;
-            padding: 15px 20px;
+        .navbar .menu a {
+            color: #333;
+            font-size: 1.2rem;
             text-decoration: none;
-            display: block;
-            font-size: 1.2rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .sidebar a:hover {
-            background-color: #ff6a00;
-            transform: scale(1.05);
+        .navbar .menu a:hover {
+            color: #4CAF50;
         }
 
-        .sidebar .close-btn {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .content {
-            margin-left: 250px;
-            width: calc(100% - 250px);
-            padding: 40px;
-        }
-
-        .section {
-            padding: 40px 0;
+        /* Main Content */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
             text-align: center;
-            margin-top: 20px;
         }
 
-        .section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: #ff6a00;
-        }
-
-        .section p {
-            font-size: 1.2rem;
-            color: #ccc;
-            max-width: 800px;
-            margin: 0 auto;
+        .main-content h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
         }
 
         .meme-container {
-            max-width: 100%;
-            margin: 30px auto;
+            margin-top: 30px;
+            max-width: 80%;
             text-align: center;
         }
 
         .meme-container img {
-            width: 80%;
-            max-width: 500px;
+            max-width: 100%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
         }
 
         .meme-container img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+            transform: scale(1.05);
         }
 
         .meme-actions {
             margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
         }
 
         .meme-actions button {
-            background-color: #ff4e50;
+            background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 12px 25px;
             font-size: 1.1rem;
             border-radius: 50px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .meme-actions button:hover {
-            background-color: #ff6a00;
-            transform: scale(1.1);
+            background-color: #45a049;
         }
 
-        .dinosaur-game-container {
-            text-align: center;
-            margin-top: 50px;
-            position: relative;
-            width: 80%;
-            height: 300px;
-            margin: 0 auto;
-        }
-
-        .dinosaur-game-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
+        /* Social Media Section */
         .social-media {
-            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .social-media a {
-            font-size: 2.5rem;
-            color: #fff;
-            transition: color 0.3s ease, transform 0.3s ease;
+            color: #333;
+            font-size: 2rem;
+            transition: color 0.3s ease;
         }
 
         .social-media a:hover {
-            color: #ff6a00;
-            transform: scale(1.1);
+            color: #4CAF50;
         }
 
+        /* Footer */
         footer {
-            background-color: #121212;
-            color: #bbb;
+            background-color: #333;
+            color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        footer p {
+            margin-top: 50px;
             font-size: 0.9rem;
         }
 
-        /* Media Queries for Responsiveness */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .content {
-                margin-left: 0;
-                width: 100%;
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .menu {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            .main-content h2 {
+                font-size: 1.5rem;
             }
 
             .meme-container img {
-                width: 90%;
+                max-width: 100%;
             }
 
             .meme-actions button {
-                padding: 12px 25px;
-                font-size: 1rem;
+                padding: 10px 20px;
             }
 
-            .dinosaur-game-container {
-                width: 100%;
-                height: 250px;
-            }
-
-            .sidebar {
-                width: 200px;
+            .social-media a {
+                font-size: 1.5rem;
             }
         }
-
     </style>
 </head>
 
 <body>
 
-<!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-    <span class="close-btn" onclick="toggleSidebar()">&times;</span>
-    <a href="#aboutSection">About Us</a>
-    <a href="#historySection">History</a>
-    <a href="#portfolioSection">Portfolio</a>
-    <a href="#gallerySection">Gallery</a>
-</div>
-
-<!-- Content Area -->
-<div class="content">
-
     <!-- Header -->
     <header>
         <h1>MEMES254KE</h1>
-        <p>Your ultimate meme destination</p>
+        <p>Your Ultimate Meme Hub</p>
     </header>
 
-    <!-- Sidebar Toggle Button -->
-    <button style="position: absolute; left: 15px; top: 20px; background-color: #ff4e50; color: white; border: none; padding: 15px; font-size: 1.5rem; border-radius: 50%; cursor: pointer;" onclick="toggleSidebar()">&#9776;</button>
-
-    <!-- About Section -->
-    <div id="aboutSection" class="section">
-        <h2>About Us</h2>
-        <p>Welcome to MEMES254KE! We are a fun and vibrant platform where you can explore, share, and enjoy the funniest memes on the internet. Our goal is to bring joy and laughter to your day with the most random and hilarious memes.</p>
-    </div>
-
-    <!-- History Section -->
-    <div id="historySection" class="section" style="background-color: #1e1e1e;">
-        <h2>Our History</h2>
-        <p>Founded in 2024, MEMES254KE began as a simple idea to make the internet a more entertaining place by sharing memes. Over time, we’ve grown into a community-driven hub for meme lovers from around the world.</p>
-    </div>
-
-    <!-- Portfolio Section -->
-    <div id="portfolioSection" class="section">
-        <h2>Our Portfolio</h2>
-        <p>Take a look at some of our featured memes and highlights that showcase our creative and funny side. Our collection is ever-growing with more memes coming daily!</p>
-    </div>
-
-    <!-- Meme Display Section -->
-    <div class="meme-container">
-        <img id="memeImage" src="" alt="Random Meme" />
-        <div class="meme-actions">
-            <button id="loadMemeBtn">Load Random Meme</button>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#history">History</a>
+            <a href="#portfolio">Portfolio</a>
         </div>
-    </div>
+        <button class="btn btn-outline-primary" onclick="toggleSidebar()">☰</button>
+    </nav>
 
-    <!-- Dinosaur Game Section -->
-    <div class="dinosaur-game-container">
-        <iframe src="https://chromedino.com/" frameborder="0"></iframe>
-    </div>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <h2>Explore Our Latest Memes</h2>
 
-    <!-- Social Media Links -->
-    <div class="social-media">
-        <a href="https://wa.me/yourphone" target="_blank"><i class="fa fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/youraccount" target="_blank"><i class="fa fa-instagram"></i></a>
-        <a href="https://t.me/yourchannel" target="_blank"><i class="fa fa-telegram"></i></a>
+            <!-- Meme Section -->
+            <div class="meme-container">
+                <img id="memeImage" src="https://i.imgci.com/placeholder.jpg" alt="Meme" />
+                <div class="meme-actions">
+                    <button id="loadMemeBtn">Load New Meme</button>
+                </div>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://wa.me/yourphone" target="_blank" title="WhatsApp">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/youraccount" target="_blank" title="Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="https://t.me/yourchannel" target="_blank" title="Telegram">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>Powered by MEMES254KE | All rights reserved.</p>
+        <p>MEMES254KE | All Rights Reserved &copy; 2024</p>
     </footer>
-</div>
 
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JavaScript -->
+    <script>
+        const memeAPI = 'https://meme-api.com/gimme';
 
-<script>
-    // Function to toggle sidebar visibility
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.style.display = (sidebar.style.display === 'block') ? 'none' : 'block';
-    }
+        // Function to load a new meme
+        function loadRandomMeme() {
+            fetch(memeAPI)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('memeImage').src = data.url;
+                })
+                .catch(err => console.log('Error loading meme:', err));
+        }
 
-    // Meme API URL (using a random meme generator)
-    const memeAPI = 'https://meme-api.com/gimme';
+        // Event Listener for button to load meme
+        document.getElementById('loadMemeBtn').addEventListener('click', loadRandomMeme);
 
-    // Function to fetch a random meme
-    function loadRandomMeme() {
-        fetch(memeAPI)
-            .then(response => response.json())
-            .then(data => {
-                const memeUrl = data.url;
-                document.getElementById('memeImage').src = memeUrl;
-            })
-            .catch(err => console.error('Error fetching meme:', err));
-    }
-
-    // Load meme when the page loads
-    window.onload = loadRandomMeme;
-
-    // Event Listener for the "Load Random Meme" button
-    document.getElementById('loadMemeBtn').addEventListener('click', loadRandomMeme);
-</script>
+        // Load meme on page load
+        window.onload = loadRandomMeme;
+    </script>
 
 </body>
 
