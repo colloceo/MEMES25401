@@ -149,14 +149,18 @@
 
         /* Google Dino Game Section */
         .dino-game-container {
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 150px;
+            z-index: 9999;
+            display: none; /* Hidden initially */
         }
 
         iframe {
             width: 100%;
-            height: 400px;
+            height: 100%;
             border: none;
         }
 
@@ -255,10 +259,6 @@
                 </div>
             </div>
 
-            <!-- Google Dino Game -->
-            <iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="100%" height="100%" loading="lazy"></iframe>
-<style type="text/css">iframe { position: absolute; width: 100%; height: 100%; z-index: 999; }</style
-
             <!-- Social Media Icons -->
             <div class="social-media">
                 <a href="https://wa.me/yourphone" target="_blank" title="WhatsApp">
@@ -298,6 +298,15 @@
 
         // Load meme on page load
         window.onload = loadRandomMeme;
+
+        // Toggle Dino Game visibility
+        function toggleDinoGame() {
+            const dinoFrame = document.querySelector('.dino-game-container');
+            dinoFrame.style.display = (dinoFrame.style.display === 'none' || dinoFrame.style.display === '') ? 'block' : 'none';
+        }
+
+        // Trigger game toggle for example on a button click
+        setTimeout(toggleDinoGame, 3000); // Example: show the game after 3 seconds
     </script>
 
 </body>
