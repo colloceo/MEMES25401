@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMES254KE - Epic 254 Memes</title>
-    
-    <!-- Link to CSS Libraries -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-
-    <!-- Custom Styles -->
     <style>
-        /* Reset and Global Styles */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
@@ -32,7 +23,6 @@
             color: white;
             padding: 20px;
             text-align: center;
-            border-radius: 0 0 10px 10px;
             position: fixed;
             top: 0;
             width: 100%;
@@ -44,77 +34,59 @@
             margin: 0;
         }
 
-        .container {
-            padding-top: 100px; /* To avoid content overlap due to fixed header */
-        }
-
         .navbar {
             background-color: #ffffff;
             padding: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
             margin-top: 60px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
         }
 
-        .navbar .menu {
+        .navbar ul {
+            list-style: none;
             display: flex;
             gap: 20px;
         }
 
-        .navbar .menu a {
+        .navbar a {
             color: #333;
-            font-size: 1.2rem;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
         }
 
-        .navbar .menu a:hover {
-            color: #4CAF50;
+        .navbar a:hover {
+            background-color: #4CAF50;
+            color: white;
         }
 
-        /* Main Content */
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin-top: 50px;
+        .container {
+            padding-top: 100px; /* To avoid content overlap due to fixed header */
             text-align: center;
         }
 
-        .main-content h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
+        .main-content {
+            margin: 20px 0;
         }
 
         .meme-container {
-            margin-top: 30px;
-            max-width: 80%;
-            text-align: center;
+            margin: 20px 0;
         }
 
         .meme-container img {
             max-width: 100%;
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .meme-container img:hover {
             transform: scale(1.05);
         }
 
-        .meme-actions {
-            margin-top: 20px;
-        }
-
-        .meme-actions button {
+        .btn {
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -125,54 +97,16 @@
             transition: background-color 0.3s ease;
         }
 
-        .meme-actions button:hover {
+        .btn:hover {
             background-color: #45a049;
         }
 
-        /* Meme Categories */
-        .categories {
+        .trending-memes, .meme-of-the-day, .contact-us {
+            margin: 40px 0;
+            padding: 20px;
             background-color: #fff;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .categories h3 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .category-list {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .category-list a {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .category-list a:hover {
-            background-color: #45a049;
-        }
-
-        /* Trending Memes Section */
-        .trending-memes {
-            background-color: #f0f0f0;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .trending-memes h3 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .trending-gallery {
@@ -183,87 +117,9 @@
         }
 
         .trending-gallery img {
-            max-width: 250px;
+            max-width: 200px;
             border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Meme of the Day */
-        .meme-of-the-day {
-            background-color: #4CAF50;
-            padding: 40px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .meme-of-the-day h3 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .meme-of-the-day img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-
-        /* Social Media Links */
-        .social-media {
-            background-color: #333;
-            padding: 30px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .social-media a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 20px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-media a:hover {
-            color: #4CAF50;
-        }
-
-        /* Contact Us Form */
-        .contact-us {
-            background-color: #f9f9f9;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .contact-us h3 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .contact-us form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .contact-us input,
-        .contact-us textarea {
-            width: 60%;
-            padding: 10px;
-            font-size: 1.1rem;
-            border-radius: 5px;
-        }
-
-        .contact-us button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.1rem;
-            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         footer {
@@ -271,107 +127,90 @@
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 50px;
+            margin-top: 20px;
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .trending-gallery {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Header -->
     <header>
         <h1>MEMES254KE</h1>
         <p>Your Ultimate 254 Meme Hub</p>
     </header>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="menu">
-            <a href="#">Home</a>
-            <a href="#">Memes</a>
-            <a href="#">Categories</a>
-            <a href="#">Contact</a>
-        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Memes</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
 
     <div class="container">
-        <!-- Main Content -->
-        <div class="main-content">
+        <div class ="main-content">
             <h2>Explore the Best Memes on 254</h2>
-
-            <!-- Meme Section -->
             <div class="meme-container">
-                <img id="memeImage" src="https://i.imgci.com/placeholder.jpg" alt="Meme" />
-                <div class="meme-actions">
-                    <button id="loadMemeBtn">Load New Meme</button>
-                </div>
+                <img id="memeImage" src="" alt="Meme">
+                <button id="loadMemeBtn" class="btn">Load New Meme</button>
             </div>
         </div>
-    </div>
-
-
-    <!-- Trending Memes Section -->
-    <div class="trending-memes">
-        <h3>Trending Memes</h3>
-        <div class="trending-gallery">
-            <img src="https://th.bing.com/th/id/R.77d2750c7232a07a53ad0763d99633ce?rik=XMCNq%2bpGki2%2bAw&riu=http%3a%2f%2fnairobiwire.com%2fwp-content%2fuploads%2f2020%2f05%2fp12-2.jpg&ehk=L1RbYFP5xxw9e4RJslnQ01vGepA26UiAj%2bO2IFf4IGc%3d&risl=&pid=ImgRaw&r=0" alt="Trending Meme 1">
-            <img src="https://i.imgci.com/placeholder.jpg" alt="Trending Meme 2">
-            <img src="https://i.imgci.com/placeholder.jpg" alt="Trending Meme 3">
+        <div class="trending-memes">
+            <h3>Trending Memes</h3>
+            <div class="trending-gallery">
+                <img src="" alt="Trending Meme 1">
+                <img src="" alt="Trending Meme 2">
+                <img src="" alt="Trending Meme 3">
+            </div>
+        </div>
+        <div class="meme-of-the-day">
+            <h3>Meme of the Day</h3>
+            <img src="" alt="Meme of the Day">
+        </div>
+        <div class="contact-us">
+            <h3>Contact Us</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
         </div>
     </div>
 
-    <!-- Meme of the Day -->
-    <div class="meme-of-the-day">
-        <h3>Meme of the Day</h3>
-        <img src="https://i.imgci.com/placeholder.jpg" alt="Meme of the Day">
-    </div>
-
-
-    <!-- Social Media Links -->
-    <div class="social-media">
-        <a href="#"><i class="fa fa-whatsapp"></i></a>
-        <a href="#"><i class="fa fa-telegram"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-    </div>
-
-    <!-- Contact Us Section -->
-    <div class="contact-us">
-        <h3>Contact Us</h3>
-        <form>
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Your Email" />
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <p>MEMES254KE | All Rights Reserved &copy; 2024</p>
+        <p>&copy; 2024 MEMES254KE. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        const memeAPI = 'https://meme-api.com/gimme';
+        const memes = [
+            'https://example.com/meme1.jpg',
+            'https://example.com/meme2.jpg',
+            'https://example.com/meme3.jpg'
+        ];
 
-        // Function to load a new meme
+        const memeImage = document.getElementById('memeImage');
+        const loadMemeBtn = document.getElementById('loadMemeBtn');
+
         function loadRandomMeme() {
-            fetch(memeAPI)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('memeImage').src = data.url;
-                })
-                .catch(err => console.log('Error loading meme:', err));
+            const randomIndex = Math.floor(Math.random() * memes.length);
+            memeImage.src = memes[randomIndex];
         }
 
-        // Event Listener for button to load meme
-        document.getElementById('loadMemeBtn').addEventListener('click', loadRandomMeme);
-
-        // Load meme on page load
-        window.onload = loadRandomMeme;
+        loadMemeBtn.addEventListener('click', loadRandomMeme);
+        window.onload = loadRandomMeme; // Load a meme when the page loads
     </script>
-
 </body>
-
 </html>
