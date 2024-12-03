@@ -15,10 +15,10 @@
             font-family: 'Arial', sans-serif;
             background-color: #f0f4f8;
             color: #333;
-            line-height: 1.6;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            perspective: 1000px;
         }
 
         header {
@@ -29,6 +29,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
@@ -61,6 +62,24 @@
             border-radius: 5px;
         }
 
+        .hero {
+            height: 300px;
+            background-image: url('https://source.unsplash.com/random/800x300/?memes');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            transform: translateZ(30px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
         .container {
             flex: 1;
             padding: 20px;
@@ -72,13 +91,14 @@
         .meme-card {
             background: white;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.3s;
+            transform: rotateY(0deg);
         }
 
         .meme-card:hover {
-            transform: translateY(-5px);
+            transform: rotateY(10deg);
         }
 
         .meme-card img {
@@ -106,6 +126,48 @@
         }
 
         .btn:hover {
+            background-color: #e84118;
+        }
+
+        .contact-us {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-us h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-us form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-us input, 
+        .contact-us textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius : 5px;
+            font-size: 1rem;
+        }
+
+        .contact-us button {
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-us button:hover {
             background-color: #e84118;
         }
 
@@ -139,6 +201,10 @@
     </ul>
 </nav>
 
+<div class="hero">
+    <h2>Welcome to the World of Memes!</h2>
+</div>
+
 <div class="container">
     <div class="meme-card">
         <img id="memeImage" src="" alt="Meme">
@@ -155,27 +221,44 @@
     </div>
 </div>
 
+<div class="contact-us">
+    <h3>Contact Us</h3>
+    <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
 <footer>
     <p>&copy; 2024 MEMES254KE. All Rights Reserved.</p>
 </footer>
 
 <script>
     const memes = [
-    'https://example.com/meme1.jpg',
-    'https://example.com/meme2.jpg',
-    'https://example.com/meme3.jpg'
-];
+        'https://example.com/meme1.jpg',
+        'https://example.com/meme2.jpg',
+        'https://example.com/meme3.jpg'
+    ];
 
-const memeImage = document.getElementById('memeImage');
-const loadMemeBtn = document.getElementById('loadMemeBtn');
+    const memeImage = document.getElementById('memeImage');
+    const loadMemeBtn = document.getElementById('loadMemeBtn');
 
-function loadRandomMeme() {
-    const randomIndex = Math.floor(Math.random() * memes.length);
-    memeImage.src = memes[randomIndex];
-}
+    function loadRandomMeme() {
+        const randomIndex = Math.floor(Math.random() * memes.length);
+        memeImage.src = memes[randomIndex];
+    }
 
-loadMemeBtn.addEventListener('click', loadRandomMeme);
-window.onload = loadRandomMeme; // Load a meme when the page loads }
+    loadMemeBtn.addEventListener('click', loadRandomMeme);
+    window.onload = loadRandomMeme; // Load a meme when the page loads
+
+    // Handle contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Your message has been sent!'); // Placeholder for actual API integration
+        this.reset(); // Reset the form
+    });
 </script>
 </body>
 </html>
