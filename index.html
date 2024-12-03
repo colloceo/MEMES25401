@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEMES254KE - Epic 254 Memes</title>
+    <title>My Project - GitHub Inspired</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -12,40 +13,32 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f6f8fa;
+            color: #24292e;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            perspective: 1000px;
         }
 
         header {
-            background-color: #ff4757;
+            background-color: #24292e;
             color: white;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin: 0;
+            font-size: 1.5rem;
         }
 
         .navbar {
-            background-color: #2f3542;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-
-        .navbar ul {
-            list-style: none;
             display: flex;
             gap: 20px;
         }
@@ -58,129 +51,84 @@
         }
 
         .navbar a:hover {
-            background-color: #57606f;
+            background-color: #444d56;
             border-radius: 5px;
         }
 
         .hero {
-            height: 300px;
-            background-image: url('https://source.unsplash.com/random/800x300/?memes');
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            padding: 60px 20px;
             text-align: center;
-            transform: translateZ(30px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 10px;
         }
 
         .hero h2 {
-            font-size: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .container {
-            flex: 1;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .meme-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-            transform: rotateY(0deg);
-        }
-
-        .meme-card:hover {
-            transform: rotateY(10deg);
-        }
-
-        .meme-card img {
-            width: 100%;
-            height: auto;
-        }
-
-        .meme-card h3 {
-            padding: 15px;
-            text-align: center;
-            font-size: 1.5rem;
-            color: #2f3542;
-        }
-
-        .btn {
-            background-color: #ff4757;
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 15px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #e84118;
-        }
-
-        .contact-us {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-us h3 {
-            text-align: center;
+            font-size: 2.5rem;
             margin-bottom: 20px;
         }
 
-        .contact-us form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
 
-        .contact-us input, 
-        .contact-us textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius : 5px;
-            font-size: 1rem;
-        }
-
-        .contact-us button {
-            background-color: #ff4757;
+        .cta-button {
+            background-color: #28a745;
             color: white;
+            padding: 12px 20px;
             border: none;
-            padding: 12px;
-            font-size: 1rem;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 1rem;
             transition: background-color 0.3s;
         }
 
-        .contact-us button:hover {
-            background-color: #e84118;
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            margin-bottom: 15px;
         }
 
         footer {
-            background-color: #2f3542;
+            background-color: #24292e;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
+            margin-top: auto;
         }
 
         @media (max-width: 600px) {
-            .navbar ul {
+            .navbar {
                 flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -188,77 +136,52 @@
 <body>
 
 <header>
-    <h1>MEMES254KE</h1>
-    <p>Your Ultimate 254 Meme Hub</p>
+    <h1>My Project</h1>
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
 </header>
 
-<nav class="navbar">
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Memes</a></li>
-        <li><a href="#">Categories</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
-
 <div class="hero">
-    <h2>Welcome to the World of Memes!</h2>
+    <h2>Welcome to My Project</h2>
+    <p>Your one-stop solution for managing your projects efficiently.</p>
+    <button class="cta-button">Get Started</button>
 </div>
 
-<div class="container">
-    <div class="meme-card">
-        <img id="memeImage" src="" alt="Meme">
-        <h3>Meme of the Moment</h3>
-        <button id="loadMemeBtn" class="btn">Load New Meme</button>
+<section class="features">
+    <div class="feature-card">
+        <h3>Feature One</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac nisi nec felis cursus malesuada.</p>
     </div>
-    <div class="meme-card">
-        <h3>Trending Memes</h3>
-        <div class="trending-gallery">
-            <img src="" alt="Trending Meme 1">
-            <img src="" alt="Trending Meme 2">
-            <img src="" alt="Trending Meme 3">
-        </div>
+    <div class="feature-card">
+        <h3>Feature Two</h3>
+        <p>Quisque vel dapibus nisl. Sed sollicitudin, justo et hendrerit pharetra, ligula risus iaculis justo.</p>
     </div>
-</div>
-
-<div class="contact-us">
-    <h3>Contact Us</h3>
-    <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</div>
+    <div class="feature-card">
+        <h3>Feature Three</h3>
+        <p>Aliquam erat volutpat. Integer at leo nec arcu scelerisque faucibus. Nulla facilisi.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Feature Four</h3>
+        <p>Aenean ac magna eu arcu varius hendrerit. Vivamus nec orci sed nulla fermentum dignissim.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Feature Five</h3>
+        <p>Nam euismod, erat vel euismod pellentesque, ligula nisl facilisis orci, at facilisis nisi erat non eros.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Feature Six</h3>
+        <p>Curabitur in ipsum eget metus finibus malesuada. Sed vitae nisl sit amet nulla ultrices facilisis.</p>
+    </div>
+</section>
 
 <footer>
-    <p>&copy; 2024 MEMES254KE. All Rights Reserved.</p>
+    <p>&copy; 2024 My Project. All Rights Reserved.</p>
+    <p><a href="#" style="color: white; text-decoration: underline;">Privacy Policy</a> | <a href="#" style="color: white; text-decoration: underline;">Terms of Service</a></p>
 </footer>
 
-<script>
-    const memes = [
-        'https://example.com/meme1.jpg',
-        'https://example.com/meme2.jpg',
-        'https://example.com/meme3.jpg'
-    ];
-
-    const memeImage = document.getElementById('memeImage');
-    const loadMemeBtn = document.getElementById('loadMemeBtn');
-
-    function loadRandomMeme() {
-        const randomIndex = Math.floor(Math.random() * memes.length);
-        memeImage.src = memes[randomIndex];
-    }
-
-    loadMemeBtn.addEventListener('click', loadRandomMeme);
-    window.onload = loadRandomMeme; // Load a meme when the page loads
-
-    // Handle contact form submission
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('Your message has been sent!'); // Placeholder for actual API integration
-        this.reset(); // Reset the form
-    });
-</script>
 </body>
 </html>
