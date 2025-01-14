@@ -1,0 +1,50 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.upload-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.upload-container h2 {
+    margin-bottom: 20px;
+    color: #6f42c1;
+}
+
+.upload-container input,
+.upload-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.upload-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.upload-container button:hover {
+    background-color: #5a32a3;
+}
