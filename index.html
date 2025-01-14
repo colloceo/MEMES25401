@@ -1,13 +1,139 @@
-<header>
-    <h1>MEMES254KE</h1>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="trending.html">Trending Memes</a>
-        <a href="upload.html">Upload Meme</a>
-        <a href="login.html">Login</a>
-    </nav>
-    <div class="search-bar">
-        <input type="text" placeholder="Search memes...">
-        <button>Search</button>
-    </div>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMES254KE - Your Meme Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css"> <!-- Link to main.css -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>MEMES254KE</h1>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending Memes</a>
+            <a href="upload.html">Upload Meme</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search memes...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to MEMES254KE!</h2>
+        <p>Your ultimate destination for the funniest memes.</p>
+        <button class="cta-button">Explore Memes</button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>Trending Memes</h3>
+            <p>Stay updated with the latest and most popular memes trending in Kenya and worldwide. Don’t miss out!</p>
+        </div>
+        <div class="feature-card">
+            <h3>Meme Categories</h3>
+            <p>Explore a variety of meme categories including politics, sports, and everyday life. Find your favorite style!</p>
+        </div>
+        <div class="feature-card">
+            <h3>Create Your Own Memes</h3>
+            <p>Unleash your creativity! Use our meme generator to create your own hilarious memes and share them with the world.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Share and Connect</h3>
+            <p>Join our community of meme lovers! Share your favorite memes and connect with fellow meme enthusiasts.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Daily Meme Updates</h3>
+            <p>Never run out of laughs! We update our meme collection daily, ensuring you always have fresh content.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Mobile Friendly</h3>
+            <p>Access MEMES254KE on the go! Our website is fully optimized for mobile devices, so you can browse anywhere.</p>
+        </div>
+    </section>
+
+    <!-- Meme Gallery Section -->
+    <section class="gallery">
+        <h2>Meme Gallery</h2>
+        <div class="meme" onclick="alert('Meme clicked!')">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 1">
+        </div>
+        <div class="meme" onclick="alert('Meme clicked!')">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 2">
+        </div>
+        <div class="meme" onclick="alert('Meme clicked!')">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 3">
+        </div>
+        <div class="meme" onclick="alert('Meme clicked!')">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 4">
+        </div>
+        <div class="meme" onclick="alert('Meme clicked!')">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 5">
+        </div>
+        <div class="meme" onclick="alert('Meme clicked')">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 6">
+        </div>
+    </section>
+
+    <!-- Comment Section -->
+    <section class="comment-section">
+        <h3>Leave a Comment</h3>
+        <div id="comments-container"></div>
+        <form class="comment-form" onsubmit="event.preventDefault(); addComment();">
+            <input type="text" id="username" placeholder="Your Name" required>
+            <textarea id="comment" rows="4" placeholder="Your Comment" required></textarea>
+            <button type="submit">Submit Comment</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 MEMES254KE. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Whatsapp</a>
+            <a href="#">Telegram</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Add comment functionality
+        function addComment() {
+            const username = document.getElementById('username').value;
+            const commentText = document.getElementById('comment').value;
+
+            if (username && commentText) {
+                const commentContainer = document.getElementById('comments-container');
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment');
+                commentDiv.innerHTML = `<strong>${username}</strong>: ${commentText}`;
+                commentContainer.appendChild(commentDiv);
+
+                // Clear the input fields
+                document.getElementById('username').value = '';
+                document.getElementById('comment').value = '';
+            } else {
+                alert("Please fill in both fields.");
+            }
+        }
+
+        // Search functionality
+        document.querySelector('.search-bar button').addEventListener('click', function () {
+            const query = document.querySelector('.search-bar input').value;
+            if (query) {
+                alert(`Searching for: ${query}`);
+                // Add actual search logic here (e.g., filter memes)
+            } else {
+                alert('Please enter a search term.');
+            }
+        });
+    </script>
+</body>
+</html>
